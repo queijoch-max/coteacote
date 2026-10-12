@@ -1,0 +1,21 @@
+# see https://symfony.com/doc/current/reference/configuration/framework.html
+framework:
+    secret: '%env(APP_SECRET)%'
+
+    # ES-02 : cookie de session HttpOnly, SameSite=Lax. Seuls des cookies techniques sont utilisés (DP-06).
+    session:
+        cookie_httponly: true
+        cookie_samesite: lax
+        cookie_secure: auto
+        name: COTEACOTE_SESSION
+
+    csrf_protection: true
+
+when@test:
+    framework:
+        test: true
+        session:
+            storage_factory_id: session.storage.factory.mock_file
+        # Cache en mémoire : les limiteurs de débit repartent de zéro à chaque test.
+        cache:
+            app: cache.adapter.array

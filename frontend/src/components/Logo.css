@@ -1,0 +1,124 @@
+/*
+ * Logo 100 % CSS : une maison, et dedans deux personnes qui se tiennent la main.
+ * Toutes les dimensions sont en em : la taille se règle avec font-size (1em = 1/4 de la largeur).
+ */
+.logo {
+  --logo-brun: #7a4a2a;
+  --logo-brun-fonce: #5a3419;
+  --logo-caramel: #c08a4d;
+  --logo-mur: #fffaf2;
+
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 4em;
+  height: 4em;
+  font-size: 12px;
+}
+
+/* Toit */
+.logo__toit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4em;
+  height: 1.75em;
+  background: var(--logo-brun);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+/* Cheminée */
+.logo::before {
+  content: '';
+  position: absolute;
+  top: 0.35em;
+  right: 0.75em;
+  width: 0.42em;
+  height: 0.9em;
+  background: var(--logo-brun-fonce);
+  border-radius: 0.06em;
+}
+
+/* Murs */
+.logo__maison {
+  position: absolute;
+  top: 1.62em;
+  left: 0.42em;
+  width: 3.16em;
+  height: 2.38em;
+  background: var(--logo-mur);
+  border: 0.17em solid var(--logo-brun);
+  border-radius: 0 0 0.28em 0.28em;
+  overflow: hidden;
+}
+
+/* Personnes */
+.logo__personne {
+  position: absolute;
+  bottom: -0.05em;
+  width: 0.86em;
+  height: 1.62em;
+}
+
+.logo__personne--gauche {
+  left: 0.36em;
+  --couleur: var(--logo-caramel);
+}
+
+.logo__personne--droite {
+  right: 0.36em;
+  --couleur: var(--logo-brun);
+}
+
+/* Tête */
+.logo__personne::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0.56em;
+  height: 0.56em;
+  margin-left: -0.28em;
+  border-radius: 50%;
+  background: var(--couleur);
+}
+
+/* Corps */
+.logo__personne::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0.86em;
+  height: 0.98em;
+  border-radius: 0.43em 0.43em 0.12em 0.12em;
+  background: var(--couleur);
+}
+
+/* Bras qui se rejoignent et mains jointes */
+.logo__mains {
+  position: absolute;
+  bottom: 0.52em;
+  left: 50%;
+  width: 0.96em;
+  height: 0.15em;
+  margin-left: -0.48em;
+  border-radius: 0.1em;
+  background: linear-gradient(90deg, var(--logo-caramel) 0 50%, var(--logo-brun) 50% 100%);
+}
+
+.logo__mains::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.3em;
+  height: 0.3em;
+  margin: -0.15em 0 0 -0.15em;
+  border-radius: 50%;
+  background: var(--logo-brun-fonce);
+}
+
+.logo--grand {
+  font-size: 40px;
+}

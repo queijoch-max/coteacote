@@ -1,0 +1,10 @@
+{% extends 'emails/base.html.twig' %}
+{% block contenu %}
+  <p>Bonjour {{ user.prenom }},</p>
+  <p>Merci pour votre inscription. Pour confirmer votre adresse e-mail, cliquez sur le bouton ci-dessous :</p>
+  <p style="margin:24px 0;">
+    <a href="{{ lien }}" style="display:inline-block;background:#6b4226;color:#ffffff;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:bold;">Confirmer mon adresse</a>
+  </p>
+  <p>Ce lien est valable 24 heures. Ensuite, la mairie examinera votre inscription.</p>
+  <p style="font-size:14px;color:#7a6552;">Si le bouton ne fonctionne pas, copiez ce lien : {{ lien }}</p>
+{% endblock %}

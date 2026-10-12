@@ -1,0 +1,23 @@
+{% extends 'emails/base.html.twig' %}
+{% block contenu %}
+  {% if publication.publieeParMairie %}
+    <p>Bonjour,</p>
+    <p>Une personne a répondu à la publication saisie pour <strong>{{ publication.beneficiaire }}</strong> ({{ publication.rueBeneficiaire }}).</p>
+  {% else %}
+    <p>Bonjour {{ publication.auteur.prenom }},</p>
+  {% endif %}
+  <p>
+    <strong>{{ repondant.prenom }}</strong>
+    {% if publication.type.value == 'demande' %}peut vous aider{% else %}est intéressé(e) par votre proposition{% endif %} :
+  </p>
+  <p style="background:#f5efe6;border-radius:8px;padding:14px;">
+    {{ publication.type.libelle }} · {{ publication.categorie.libelle }} · {{ publication.nature.libelle }}
+    {% if publication.complement %}<br>« {{ publication.complement }} »{% endif %}
+  </p>
+  <p>Pour le ou la contacter :</p>
+  <ul>
+    {% if telephone %}<li>Téléphone : <strong>{{ telephone }}</strong></li>{% endif %}
+    {% if emailContact %}<li>E-mail : <strong>{{ emailContact }}</strong></li>{% endif %}
+  </ul>
+  <p>Ces coordonnées ne sont visibles que par vous. Une fois l'entraide terminée, pensez à marquer votre publication comme « résolue ».</p>
+{% endblock %}

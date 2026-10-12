@@ -1,0 +1,9 @@
+{% extends 'emails/base.html.twig' %}
+{% block contenu %}
+  <p>Bonjour {{ user.prenom }},</p>
+  <p>La mairie n'a pas pu valider votre inscription.</p>
+  {% if user.motifRefus %}
+    <p><strong>Motif :</strong> {{ user.motifRefus.libelle }}</p>
+  {% endif %}
+  <p>Pour toute question, vous pouvez contacter directement la mairie. Vos données seront effacées dans 30 jours.</p>
+{% endblock %}

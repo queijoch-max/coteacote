@@ -1,0 +1,7 @@
+# Les règles propres à chaque partie sont dans backend/.gitignore et frontend/.gitignore
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.claude/

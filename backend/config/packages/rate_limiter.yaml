@@ -1,0 +1,11 @@
+# ES-06 : limitation de débit par habitant
+framework:
+    rate_limiter:
+        publication:
+            policy: sliding_window
+            limit: 10
+            interval: '1 day'
+        reponse:
+            policy: sliding_window
+            limit: 20
+            interval: '1 day'

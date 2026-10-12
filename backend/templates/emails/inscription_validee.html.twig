@@ -1,0 +1,8 @@
+{% extends 'emails/base.html.twig' %}
+{% block contenu %}
+  <p>Bonjour {{ user.prenom }},</p>
+  <p>Bonne nouvelle : la mairie a validé votre inscription. Vous pouvez maintenant demander et proposer de l'aide à vos voisins.</p>
+  <p style="margin:24px 0;">
+    <a href="{{ lien }}" style="display:inline-block;background:#6b4226;color:#ffffff;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:bold;">Me connecter</a>
+  </p>
+{% endblock %}

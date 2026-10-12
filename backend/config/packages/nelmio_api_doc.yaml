@@ -1,0 +1,13 @@
+# ENF-09 : documentation OpenAPI, consultable sur /api/doc (JSON : /api/doc.json)
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Côte à côte — API d'entraide communale
+            description: |
+                API REST JSON consommée par le front React.
+                Authentification par session (cookie HttpOnly). Les requêtes qui modifient des données
+                doivent porter l'en-tête X-CSRF-Token obtenu par GET /api/session.
+            version: 1.0.0
+    areas:
+        path_patterns:
+            - ^/api(?!/doc)

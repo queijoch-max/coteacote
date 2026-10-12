@@ -1,0 +1,12 @@
+{% extends 'emails/base.html.twig' %}
+{% block contenu %}
+  <p>Bonjour,</p>
+  <p>Des actions vous attendent dans l'espace mairie de {{ commune.nom }} :</p>
+  <ul>
+    <li><strong>{{ inscriptions }}</strong> inscription(s) à valider</li>
+    <li><strong>{{ signalements }}</strong> publication(s) signalée(s)</li>
+  </ul>
+  <p style="margin:24px 0;">
+    <a href="{{ lien }}" style="display:inline-block;background:#6b4226;color:#ffffff;text-decoration:none;padding:14px 24px;border-radius:8px;font-weight:bold;">Ouvrir l'espace mairie</a>
+  </p>
+{% endblock %}
