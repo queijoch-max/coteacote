@@ -5,3 +5,4 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 .claude/
+.env.local
